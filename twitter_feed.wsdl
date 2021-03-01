@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (http://www.altova.com) by Gernot Haider (bitcoding.net) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://sap.training.sap.com" targetNamespace="http://sap.training.sap.com">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://new.webservice.namespace" elementFormDefault="qualified"/>
+	</wsdl:types>
+	<wsdl:message name="SearchTwitterRequest">
+		<wsdl:part name="feed" type="xs:string"/>
+	</wsdl:message>
+	<wsdl:portType name="TwitterFeedPort">
+		<wsdl:operation name="SearchTwitter">
+			<wsdl:input message="tns:SearchTwitterRequest"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TwitterFeedBinding" type="tns:TwitterFeedPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SearchTwitter">
+			<soap:operation soapAction="urn:SearchTwitterOperation" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SearchTwitterService">
+		<wsdl:port name="SearchTwitterPort" binding="tns:TwitterFeedBinding">
+			<soap:address location="https://TwitterFeed-hsbc.netweaver.neo.com/feed"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

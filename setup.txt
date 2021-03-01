@@ -1,0 +1,18 @@
+created 26.6.2018 pe.alexander@sap.com
+
+//Excercise1: logon to SAP Cloud Integration
+Link: https://v0xxx-tmn.avt.eu1.hana.ondemand.com/itspaces
+user:p1942505455
+passord:Welcome1
+
+//Excercise2: Mail account
+user: training.integrationservice@gmail.com
+password: Integrationservice3
+
+//Excercise5: Bearer Token 
+//Authentication external call
+URL: https://api.twitter.com/oauth2/token
+Basic enE5cWRFQzZsWUdScVNteDZkaDVlTThNeTp5c3prTllCc3I3MER3aWVBTHo0dmNtNEdMWFVFb2VOR1JUUk4ybUVrM21VTWZsTmRWQg==
+
+//search external call
+https://api.twitter.com/1.1/search/tweets.json
